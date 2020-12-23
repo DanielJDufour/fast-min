@@ -30,9 +30,8 @@ const result = min(pixel_values);
 ```
 
 # performance tests
-Here are test results comparing fast-max to two other popular libraries underscore and lodash.
-Tests have been conducted by creating an array of ten million random numbers from zero to the maximum
-theoretical value of the typed array.
+Here are test results comparing fast-min to two other popular libraries underscore and lodash.
+Tests have been conducted by creating an array of ten million random numbers from the lowest to the highest theoretical value of the typed array.
 | array type | library | average duration in milliseconds |
 | ---------- | ------- | -------------------------------- |
 | Int8Array | fast-min | **< 1** | 
