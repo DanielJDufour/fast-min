@@ -6,7 +6,7 @@ const getRandomNums = (nbits, signed) => {
     const max = Math.pow(2, nbits - (signed ? 1 : 0)) - 1;
     const min = signed ? Math.pow(-2, nbits - 1) : 0;
     const range = max - min;
-    nums.push(Math.round(min + (Math.random() * range)).toString());
+    nums.push(Math.round(min + Math.random() * range).toString());
   }
   return nums;
 };

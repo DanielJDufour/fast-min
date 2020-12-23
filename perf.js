@@ -36,5 +36,7 @@ for (let i = 0; i < 10; i++) {
 }
 const avg = times.reduce((total, n) => total + n, 0) / 10;
 console.log(
-  `| ${array_type}Array | ${min_lib} | ${min_lib === 'fast-min' ? '**': ''}${avg === 0 ? "< 1" : avg}${min_lib === 'fast-min' ? '**': ''} | `
+  `| ${array_type}Array | ${min_lib} | ${min_lib === "fast-min" ? "**" : ""}${
+    avg === 0 ? "< 1" : avg
+  }${min_lib === "fast-min" ? "**" : ""} | `
 );
