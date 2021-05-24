@@ -29,32 +29,42 @@ const result = min(pixel_values);
 // result is 0
 ```
 
+# no data value
+If you want to ignore a specific value, you can set the no_data value.
+```javascript
+const min = require("fast-min");
+
+const numbers = [99, 0, 7, 99, 5, ...]);
+const result = max(numbers, { no_data: 0 });
+// result is 5
+```
+
 # performance tests
 Here are test results comparing fast-min to two other popular libraries underscore and lodash.
 Tests have been conducted by creating an array of ten million random numbers from the lowest to the highest theoretical value of the typed array.
 | array type | library | average duration in milliseconds |
 | ---------- | ------- | -------------------------------- |
 | Int8Array | fast-min | **< 1** | 
-| Int8Array | lodash | 24.5 | 
-| Int8Array | underscore | 8.4 | 
-| Uint8Array | fast-min | **6.6** | 
-| Uint8Array | lodash | 24 | 
-| Uint8Array | underscore | 8.6 | 
+| Int8Array | lodash | 20.9 | 
+| Int8Array | underscore | 12.4 | 
+| Uint8Array | fast-min | **11.3** | 
+| Uint8Array | lodash | 23.5 | 
+| Uint8Array | underscore | 12.2 | 
 | Int16Array | fast-min | **0.5** | 
-| Int16Array | lodash | 23.8 | 
-| Int16Array | underscore | 8.1 | 
-| Uint16Array | fast-min | **7.4** | 
-| Uint16Array | lodash | 25.4 | 
-| Uint16Array | underscore | 8.1 | 
-| Int32Array | fast-min | **11.3** | 
-| Int32Array | lodash | 22.7 | 
-| Int32Array | underscore | 8.1 | 
-| Uint32Array | fast-min | **8.2** | 
-| Uint32Array | lodash | 94.3 | 
-| Uint32Array | underscore | 9.6 | 
-| BigInt64Array | fast-min | **221.4** | 
-| BigInt64Array | lodash | 223.1 | 
-| BigInt64Array | underscore | 228.4 | 
-| BigUint64Array | fast-min | **172.6** | 
-| BigUint64Array | lodash | 178 | 
-| BigUint64Array | underscore | 177.7 |
+| Int16Array | lodash | 23.6 | 
+| Int16Array | underscore | 13.3 | 
+| Uint16Array | fast-min | **13.2** | 
+| Uint16Array | lodash | 20.5 | 
+| Uint16Array | underscore | 13.5 | 
+| Int32Array | fast-min | **15.4** | 
+| Int32Array | lodash | 20.9 | 
+| Int32Array | underscore | 12.3 | 
+| Uint32Array | fast-min | **12.5** | 
+| Uint32Array | lodash | 60.9 | 
+| Uint32Array | underscore | 14.4 | 
+| BigInt64Array | fast-min | **244.2** | 
+| BigInt64Array | lodash | 257 | 
+| BigInt64Array | underscore | 245.3 | 
+| BigUint64Array | fast-min | **200.1** | 
+| BigUint64Array | lodash | 204.9 | 
+| BigUint64Array | underscore | 198 | 

@@ -7,7 +7,7 @@
     "format": "npx prettier --write *.js",
     "setup": "node setup.js",
     "perf": "./perf",
-    "test": "ava --timeout=1m --verbose"
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
@@ -35,7 +35,7 @@
   },
   "homepage": "https://github.com/DanielJDufour/fast-min#readme",
   "devDependencies": {
-    "ava": "^3.12.1",
+    "flug": "^1.1.0",
     "lodash.min": "^4.0.1",
     "underscore": "^1.11.0"
   }
