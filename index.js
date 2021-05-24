@@ -1,22 +1,11 @@
-const THEORETICAL_MINIMUMS = {
-  Array: null,
-  Int8Array: -128, // Math.pow(-2, 8 - 1)
-  Uint8Array: 0,
-  Uint8ClampedArray: 0,
-  Int16Array: -32768, // Math.pow(-2, 16 - 1)
-  Uint16Array: 0,
-  Int32Array: -2147483648, // Math.pow(-2, 32 - 1)
-  Uint32Array: 0,
-  // skipping Float32Array and Float64Array because it appears to be platform dependent
-  BigInt64Array: -9223372036854776000, // Math.pow(-2, 63)
-  BigUint64Array: 0,
-};
+const getTheoreticalMin = require("typed-array-ranges/get-min");
 
 module.exports = function fastMin(
   numbers,
-  { debug = false, no_data = undefined } = {
+  { debug = false, no_data = undefined, theoretical_min = undefined } = {
     debug: false,
     no_data: undefined,
+    theoretical_min: undefined,
   }
 ) {
   if (debug)
@@ -38,7 +27,8 @@ module.exports = function fastMin(
 
   if (debug) console.log("[fast-min] constructor:", numbers.constructor.name);
 
-  let theoretical_min = THEORETICAL_MINIMUMS[numbers.constructor.name];
+  if (theoretical_min === undefined)
+    theoretical_min = getTheoreticalMin(numbers.constructor.name);
   if (debug) console.log("[fast-min] theoretical minimunm is", theoretical_min);
   if (theoretical_min) {
     if (no_data !== undefined) {
