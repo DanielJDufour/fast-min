@@ -40,6 +40,6 @@
   "devDependencies": {
     "flug": "^1.1.0",
     "lodash.min": "^4.0.1",
-    "underscore": "^1.11.0"
+    "underscore": "^1.13.1"
   }
 }
