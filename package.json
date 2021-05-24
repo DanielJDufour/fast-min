@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "description": "Quickest Way to get the Minimum Value of an Array of Numbers (Typed or Untyped)",
   "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "scripts": {
     "format": "npx prettier --write *.js",
     "setup": "node setup.js",
