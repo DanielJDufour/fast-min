@@ -14,28 +14,28 @@ so if we encounter a 0 in the array, we can stop searching for the minimum value
 # usage
 # getting minimum value of a normal array
 ```javascript
-const min = require("fast-min");
+import fastMin from 'fast-min';
 
-const result = min([0, -1, -2, -3, -4, -5]);
+const result = fastMin([0, -1, -2, -3, -4, -5]);
 // result is -5
 ```
 
 # getting minimum value of a typed array
 ```javascript
-const min = require("fast-min");
+import fastMin from 'fast-min';
 
 const pixel_values = Uint8Array.from([0, 128, 255, 34, ...]);
-const result = min(pixel_values);
+const result = fastMin(pixel_values);
 // result is 0
 ```
 
 # no data value
 If you want to ignore a specific value, you can set the no_data value.
 ```javascript
-const min = require("fast-min");
+import fastMin from 'fast-min';
 
 const numbers = [99, 0, 7, 99, 5, ...]);
-const result = max(numbers, { no_data: 0 });
+const result = fastMin(numbers, { no_data: 0 });
 // result is 5
 ```
 
