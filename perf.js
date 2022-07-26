@@ -6,7 +6,7 @@ const [_node, _perfjs, array_type, min_lib] = process.argv;
 const MIN_FUNCS = {
   lodash: require("lodash.min"),
   underscore: require("underscore").min,
-  "fast-min": require("./index"),
+  "fast-min": require("./index")
 };
 
 const ARRAY_CONSTRUCTORS = {
@@ -17,7 +17,7 @@ const ARRAY_CONSTRUCTORS = {
   Int32: Int32Array,
   Uint32: Uint32Array,
   BigInt64: BigInt64Array,
-  BigUint64: BigUint64Array,
+  BigUint64: BigUint64Array
 };
 
 const numbers = ARRAY_CONSTRUCTORS[array_type].from(

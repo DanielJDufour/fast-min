@@ -1,11 +1,11 @@
 const getTheoreticalMin = require("typed-array-ranges/get-min");
 
-module.exports = function fastMin(
+function fastMin(
   numbers,
   { debug = false, no_data = undefined, theoretical_min = undefined } = {
     debug: false,
     no_data: undefined,
-    theoretical_min: undefined,
+    theoretical_min: undefined
   }
 ) {
   if (debug)
@@ -96,4 +96,17 @@ module.exports = function fastMin(
 
   if (debug) console.log("[fast-min] returning", min);
   return min;
-};
+}
+
+if (typeof module === "object") {
+  module.exports = fastMin;
+  module.exports.default = fastMin;
+}
+
+if (typeof self === "object") {
+  self.fastMin = fastMin;
+}
+
+if (typeof window === "object") {
+  window.fastMin = fastMin;
+}
