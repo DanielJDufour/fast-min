@@ -21,9 +21,7 @@ const ARRAY_CONSTRUCTORS = {
 };
 
 const numbers = ARRAY_CONSTRUCTORS[array_type].from(
-  JSON.parse(
-    fs.readFileSync(array_type.toLowerCase() + "-numbers.json", "utf-8")
-  )
+  JSON.parse(fs.readFileSync(array_type.toLowerCase() + "-numbers.json", "utf-8"))
 );
 
 const times = [];
